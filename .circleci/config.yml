@@ -2,7 +2,7 @@ version: 2.1
 executors:
   ci-executor:
     docker:
-      - image: circleci/ruby:2.4.2-jessie-node
+      - image: circleci/node:10.16.3
 jobs:
   build:
     executor: ci-executor
