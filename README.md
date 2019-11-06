@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/chalk/chalk.svg?branch=master)](https://travis-ci.org/chalk/chalk) [![Coverage Status](https://coveralls.io/repos/github/chalk/chalk/badge.svg?branch=master)](https://coveralls.io/github/chalk/chalk?branch=master)
+[![CircleCI](https://circleci.com/gh/marjoballabani/rtmake.svg?style=svg)](https://circleci.com/gh/marjoballabani/rtmake)
 # RTmake CLI
 
 A command line interface to generate boilerplates for different projects.
