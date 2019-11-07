@@ -38,6 +38,18 @@ jobs:
           command: 'sudo npm i -g rtmake'
 
       - run:
+          name: install-npm-wee
+          command: npm install
+
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+
+      - run:
           name: e2e tests
           command: npm run e2e
 
