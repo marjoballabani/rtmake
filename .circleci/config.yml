@@ -37,9 +37,9 @@ jobs:
           name: install rtmake
           command: 'npm i -g rtmake'
 
-      -run:
-        name: e2e tests
-        command: npm run e2e
+      - run:
+          name: e2e tests
+          command: npm run e2e
 
 workflows:
   version: 2.1

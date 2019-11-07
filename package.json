@@ -1,6 +1,6 @@
 {
   "name": "rtmake",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A CLI to bootstrap Ritech projects",
   "main": "src/index.js",
   "bin": {
@@ -14,8 +14,8 @@
     "parser": "babel-eslint"
   },
   "scripts": {
-    "unit": "mocha test/unit/**/*.js",
-    "e2e": "mocha test/e2e"
+    "unit": "mocha --timeout 15000 test/unit/**/*.js",
+    "e2e": "mocha --timeout 15000 test/e2e"
   },
   "keywords": [
     "CLI",
@@ -23,7 +23,10 @@
     "rtmake"
   ],
   "author": "Marjo Ballabani",
-  "license": "ISC",
+  "license": "MIT",
+  "engines": {
+		"node": ">=8"
+	},
   "dependencies": {
     "dotenv": "^8.2.0",
     "figlet": "^1.2.4",
@@ -44,6 +47,7 @@
     "eslint": "^6.6.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-standard": "^4.0.1",
+    "execa": "^3.2.0",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
     "proxyquire": "^2.1.3",
