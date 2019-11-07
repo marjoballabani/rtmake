@@ -4,7 +4,7 @@ executors:
     docker:
       - image: circleci/node:10.16.3
 jobs:
-  build:
+  unit:
     executor: ci-executor
     steps:
       - checkout
@@ -27,11 +27,37 @@ jobs:
 
       - run: # run tests
           name: test
-          command: npm test
+          command: npm run unit
+
+  e2e:
+    executor: ci-executor
+    steps:
+      - checkout
+      - run:
+          name: install rtmake
+          command: 'sudo npm i -g rtmake'
+
+      - run:
+          name: install-npm-wee
+          command: npm install
+
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+
+      - run:
+          name: e2e tests
+          command: npm run e2e
 
 workflows:
   version: 2.1
-
   build_and_test:
     jobs:
-      - build
+      - unit
+      - e2e:
+          requires:
+            - unit
