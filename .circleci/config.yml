@@ -32,7 +32,7 @@ jobs:
   e2e:
     executor: ci-executor
     steps:
-
+      - checkout
       - run:
           name: install rtmake
           command: 'npm i -g rtmake'
