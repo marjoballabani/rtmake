@@ -47,4 +47,6 @@ workflows:
   build_and_test:
     jobs:
       - unit
-      - e2e
+      - e2e:
+          requires:
+            - unit
