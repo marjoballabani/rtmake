@@ -4,7 +4,7 @@ executors:
     docker:
       - image: circleci/node:10.16.3
 jobs:
-  build:
+  unit:
     executor: ci-executor
     steps:
       - checkout
@@ -27,7 +27,19 @@ jobs:
 
       - run: # run tests
           name: test
-          command: npm test
+          command: npm run unit
+
+  e2e:
+    executor: ci-executor
+    steps:
+
+      - run:
+          name: install rtmake
+          command: 'npm i -g rtmake'
+
+      -run:
+        name: e2e tests
+        command: npm run e2e
 
 workflows:
   version: 2.1

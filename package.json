@@ -1,6 +1,6 @@
 {
   "name": "rtmake",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "description": "A CLI to bootstrap Ritech projects",
   "main": "src/index.js",
   "bin": {
@@ -14,7 +14,8 @@
     "parser": "babel-eslint"
   },
   "scripts": {
-    "test": "mocha"
+    "unit": "mocha test/unit/**/*.js",
+    "e2e": "mocha test/e2e"
   },
   "keywords": [
     "CLI",

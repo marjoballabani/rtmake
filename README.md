@@ -7,7 +7,7 @@
 A command line interface to generate boilerplates for different projects.
 In future versions Design patterns and Unit test boilerplates will be integrated.
 
-![alt text](https://i.ibb.co/znP3XM5/ezgif-4-1749b2d7e8e1.gif)
+![alt text](https://i.screenshot.net/4jjvzbj)
 
 ## To Install
 
