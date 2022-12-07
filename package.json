@@ -34,7 +34,7 @@
     "marked": "^0.7.0",
     "marked-terminal": "^3.3.0",
     "ora": "^4.0.2",
-    "simple-git": "^1.126.0",
+    "simple-git": "^3.15.0",
     "esm": "^3.2.25"
   },
   "devDependencies": {
